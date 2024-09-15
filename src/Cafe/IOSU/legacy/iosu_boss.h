@@ -51,16 +51,16 @@ typedef struct
 #define IOSU_NN_BOSS_TASK_START_SCHEDULING				(0x0B)
 #define IOSU_NN_BOSS_TASK_STOP_SCHEDULING				(0x0C)
 
-class CurlHelper
-{
-public:
-	CURL* getCURL()
-	{
-		return m_curl;
-	}
-private:
-	CURL* m_curl;
-}
+//class CurlHelper
+//{
+//public:
+//	CURL* getCURL()
+//	{
+//		return m_curl;
+//	}
+//private:
+//	CURL* m_curl;
+//}
 
 namespace iosu
 {
