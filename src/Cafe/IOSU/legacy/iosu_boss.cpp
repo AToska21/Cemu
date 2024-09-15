@@ -104,6 +104,11 @@ namespace iosu
 
 	static_assert(sizeof(TaskSetting) == 0x1004, "sizeof(TaskSetting_t)");
 
+	CURL* getCURL()
+	{
+		return m_curl;
+	}
+
 	struct Task
 	{
 		char task_id[8]{};
