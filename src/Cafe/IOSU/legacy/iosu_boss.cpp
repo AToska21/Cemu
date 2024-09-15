@@ -104,11 +104,6 @@ namespace iosu
 
 	static_assert(sizeof(TaskSetting) == 0x1004, "sizeof(TaskSetting_t)");
 
-	CURL* getCURL()
-	{
-		return m_curl;
-	}
-
 	struct Task
 	{
 		char task_id[8]{};
@@ -143,7 +138,7 @@ namespace iosu
 			this->task_settings.taskType = settings->taskType;
 
 			curl = std::shared_ptr<CURL>(curl_easy_init(), curl_easy_cleanup);
-			curl_easy_setopt(m_curl, CURLOPT_PROXY, GetConfig().proxy_server.GetValue().c_str());
+			curl_easy_setopt(curl, CURLOPT_PROXY, GetConfig().proxy_server.GetValue().c_str());
 		}
 	};
 
