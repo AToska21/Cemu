@@ -11,6 +11,7 @@
 
 #include "config/ActiveSettings.h"
 #include "config/NetworkSettings.h"
+#include "config/LaunchSettings.h"
 #include "curl/curl.h"
 #include "openssl/bn.h"
 #include "openssl/x509.h"
@@ -137,6 +138,7 @@ namespace iosu
 			this->task_settings.taskType = settings->taskType;
 
 			curl = std::shared_ptr<CURL>(curl_easy_init(), curl_easy_cleanup);
+			curl_easy_setopt(m_curl, CURLOPT_PROXY, GetConfig().proxy_server.GetValue().c_str());
 		}
 	};
 
